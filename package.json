@@ -1,0 +1,23 @@
+{
+  "name": "garage-rpi-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p3tecracknell/garage-rpi-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/p3tecracknell/garage-rpi-py/issues"
+  },
+  "homepage": "https://github.com/p3tecracknell/garage-rpi-py#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "rpi-gpio": "^2.1.3"
+  }
+}
