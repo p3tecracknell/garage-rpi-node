@@ -9,7 +9,7 @@ if (!PROD) {
     gpio = { DIR_OUT: 1 }
     gpiop = {
         setup: async () => { console.log('Stubbed setup') },
-        write: async () => { console.log('Stubbed write') }
+        write: async (pin, status) => { console.log(`Stubbed write (${pin}, ${status})`) }
     }
 } else {
     console.log('Running prod')
