@@ -2,15 +2,21 @@
 
 const express = require('express')
 const app = express()
-const PORT = process.env.PORT || 3000
+const bodyParser = require('body-parser')
 const gpio = require('./gpio')
 
-app.post('/', async (req, res) => {
-    await gpio.run()
-    res.send('ok')
+const PORT = process.env.PORT || 3000
+
+app.use(express.static('web'))
+app.use(bodyParser.urlencoded())
+
+app.post('/action', async (req, res) => {
+    const pin = req.body.pin
+    await gpio.run(pin)
+    res.redirect('/')
 })
 
-gpio.setup([7])
+gpio.setup([7, 8])
     .then(async () => {
         app.listen(PORT, () => console.log(`Listening on port ${PORT}!`))
 
