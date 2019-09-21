@@ -1,6 +1,6 @@
 'use strict'
 
-const PROD = (process.env.PROD === 'true')
+const PROD = (process.env.NODE_ENV === 'production')
 console.log(PROD)
 
 let gpio, gpiop
