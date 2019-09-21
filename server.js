@@ -1,5 +1,6 @@
 'use strict'
 
+const path = require('path')
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
@@ -10,7 +11,7 @@ const gpio = require('./gpio')
 
 const PORT = process.env.PORT || 3000
 
-app.use(express.static('web'))
+app.use(express.static(path.join(__dirname, 'web')))
 
 app.post('/action', async (req, res) => {
     const pin = req.body.pin
