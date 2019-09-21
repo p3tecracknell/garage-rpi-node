@@ -34,8 +34,8 @@ module.exports = {
     },
     cleanup: async () => {
         for (let pin of setupPins) {
-            await gpiop.setup(pin, gpio.DIR_IN)
-            console.log(`Set ${pin} back to IN`)
+            await gpiop.write(pin, false)
+            console.log(`Set ${pin} to false`)
         }
     }
 }
